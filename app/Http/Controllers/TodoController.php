@@ -51,7 +51,7 @@ class TodoController extends Controller
      */
     public function allTasks(Todo $todo)
     {
-        return TaskCollection::collection(Todo::all());
+        return TaskCollection::collection(Todo::paginate(3));
     }
 
 
