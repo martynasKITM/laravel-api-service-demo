@@ -18,7 +18,8 @@ class TaskCollection extends JsonResource
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=> $this->description,
-            'created'=>$this->created_at
+            'created'=>$this->created_at,
+            'user'=>$this->user
         ];
         //return parent::toArray($request);
     }

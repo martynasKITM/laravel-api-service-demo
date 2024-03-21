@@ -6,6 +6,7 @@ use App\Models\Todo;
 use Illuminate\Http\Request;
 use Validator;
 use App\Http\Resources\TaskCollection;
+use Auth;
 
 
 class TodoController extends Controller
@@ -36,7 +37,8 @@ class TodoController extends Controller
         Todo::create([
             'title'=>request('title'),
             'description'=>request('description'),
-            'status'=>0
+            'status'=>0,
+            'user_id'=>Auth::user()->id
         ]);
 
         return response()->json(['sucess'=>'Task created'],201);
